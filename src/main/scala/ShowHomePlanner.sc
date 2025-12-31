@@ -12,5 +12,30 @@
  S C A L A   M O D E R N   S H O W   H O M E   P L A N N E R
  */
 
+class ModernHome(
+                  val bedrooms: Int,
+                  val bathrooms: Int,
+                  val hasGarden: Boolean,
+                  val gardenSize: Int, //SQM
+                  val hasDoubleGarage: Boolean,
+                  val hasLoft: Boolean,
+                  val hasUtilityRoom: Boolean,
+                  val hasBasement: Boolean,
+                  val isCornerPlot: Boolean
+                ) {
+
+  // Building on one plot only
+  val address = "Newyear Estate, Partridge Lane"
+
+  //Add // Chapter 6: Precondition checking
+
+// Add Chapter 6: Override toString
 
 
+//Add chapter 5 Arithmatic operators
+
+//Add chapter 5 Relational operators
+
+//Factory Obj
+
+//Println some orders

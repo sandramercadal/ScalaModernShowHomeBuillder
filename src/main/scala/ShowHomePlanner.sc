@@ -14,6 +14,7 @@
 
 class ModernHome(
                   val bedrooms: Int,
+                  val houseType: String, //Detached, Semi
                   val bathrooms: Int,
                   val hasGarden: Boolean,
                   val gardenSize: Int, //SQM
@@ -21,13 +22,20 @@ class ModernHome(
                   val hasLoft: Boolean,
                   val hasUtilityRoom: Boolean,
                   val hasBasement: Boolean,
-                  val isCornerPlot: Boolean
+                  val isCornerPlot: Boolean,
+                  val kitchenIslandMaterial: String, //Luxury Marble, Marble or wood
+                  val floorType: String, //Tile, Laminate, wood
+                  val heatingType: String, //Underfloor, radiators,
+                  val fireplaceTtype: String,
+                  val hasPlayroom: Boolean
                 ) {
 
   // Building on one plot only
   val address = "Newyear Estate, Partridge Lane"
 
   //Add // Chapter 6: Precondition checking
+require(bedrooms >0, "At least 1 bedroom must be selected")
+
 
 // Add Chapter 6: Override toString
 
@@ -35,6 +43,8 @@ class ModernHome(
 //Add chapter 5 Arithmatic operators
 
 //Add chapter 5 Relational operators
+
+//Dynamic pricing
 
 //Factory Obj
 

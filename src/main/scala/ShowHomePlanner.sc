@@ -13,11 +13,13 @@
  */
 
 class ModernHome(
+                  val squareFootage: Double, //From 600
                   val bedrooms: Int,
                   val houseType: String, //Detached, Semi
                   val bathrooms: Int,
                   val hasGarden: Boolean,
-                  val gardenSize: Int, //SQM
+                  val houseSqm: Double,
+                  val gardenSize: Double,
                   val hasDoubleGarage: Boolean,
                   val hasLoft: Boolean,
                   val hasUtilityRoom: Boolean,
@@ -26,26 +28,56 @@ class ModernHome(
                   val kitchenIslandMaterial: String, //Luxury Marble, Marble or wood
                   val floorType: String, //Tile, Laminate, wood
                   val heatingType: String, //Underfloor, radiators,
-                  val fireplaceTtype: String,
-                  val hasPlayroom: Boolean
+                  val hasPlayroom: Boolean,
+                  val plotNumber: Int,
+                  val familyName: String,
+                  val ecoChoices: List[String]  //Solar panels, Ev charger, rainwater system in garden
                 ) {
 
   // Building on one plot only
   val address = "Newyear Estate, Partridge Lane"
 
-  //Add // Chapter 6: Precondition checking
-require(bedrooms >0, "At least 1 bedroom must be selected")
+  // Chapter 6: Precondition checking, checks that enforce business rules to create a ModernHome
+  require(bedrooms > 0, "At least 1 bedroom must be selected")
+  require(bathrooms > 0, "At least 1 bathroom must be selected")
+  require(gardenSize >= 0, "Garden size must be positive")
+  require (kitchenIslandMaterial.nonEmpty, "Must choose kitchen island material")
+
+  /** BASE SPEC HOUSE
+   * The base home is a small house with 1 bedroom, 1 bathroom, 55 sqm with no garden = £250,000
+   * Everything else is an upgrade
+         * Additional bedroom £25,000
+         * Additional bathroom £12,000
+         * Garden (per m²)£100
+         * Double garage £35,000
+         * Loft conversion £15,000
+         * Utility room £8,000
+         * Corner plot £20,000
+         * Extra square footage £50 per sq ft
+         * Kitchen upgrades: Marble £12,000 or Quartz £8,000 or Wood £5,000
+         * Flooring upgrades: Hardwood / Tile+£6k / £3k
+         * Energy Rating A or B+£10,000 / £5,000
+   */
+  //base spec house
+  //The base home is a small house with 1 bedroom, 1 bathroom, 55 sqm with no garden = £250000
+  //Everything else is an upgrade
+
+  val basicSpecPrice = 250000
 
 
-// Add Chapter 6: Override toString
+  // Add Chapter 6: Override toString
 
+  //Add chapter 5 Arithmatic operators
 
-//Add chapter 5 Arithmatic operators
+  //Add chapter 5 Relational operators
 
-//Add chapter 5 Relational operators
+  //Dynamic pricing
 
-//Dynamic pricing
+  //Factory Obj
 
-//Factory Obj
+  // Comparison house
 
-//Println some orders
+  //Twin design home
+
+  //Create homes for different families on different plots  val PetersFamily = new ModernHome (
+}
